@@ -1,0 +1,48 @@
+<body>
+<br>
+<div class="back" routerLink="/searchallcustomers">
+  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/>
+    <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
+  </svg>
+</div>
+
+<br>
+
+
+
+<br>
+
+<div class="container">
+  <form  #myform="ngForm"  method="post" (ngSubmit)="insertCustomer(myform.value)">
+
+    <label for="fname">FIRST NAME</label>
+    <input type="text" id="fname" #fnamecontrol="ngModel" name="firstName" placeholder="enter your first name"  required ngModel><br>
+    <span  style="color: red;"  *ngIf="fnamecontrol.touched && fnamecontrol.invalid">First Name is Mandatory</span><br>
+
+    <label for="lname">LAST NAME</label>
+    <input type="text" id="lname" #lnamecontrol="ngModel" name="lastName" placeholder="enter your last name" required ngModel><br>
+    <span  style="color: red;"  *ngIf="lnamecontrol.touched && lnamecontrol.invalid">Last Name is Mandatory</span><br>
+   
+    <label for="email">EMAIL ADDRESS</label>
+    <input type="email" id="email" #emailcontrol="ngModel" name="emailAddress" placeholder="enter your email" required ngModel><br>
+    <span  style="color: red;"  *ngIf="emailcontrol.touched && emailcontrol.invalid">Email is Mandatory</span><br>
+
+    <label for="phone">PHONE NUMBER</label>
+    <input type="text" id="phone" #phonecontrol="ngModel" name="phoneNumber" placeholder="enter your phone number" required ngModel><br>
+    <span  style="color: red;"  *ngIf="phonecontrol.touched && phonecontrol.invalid">Phonenumber is Mandatory</span><br>
+
+    <label for="username"> USERNAME</label>
+    <input type="text" id="username" #usernamecontrol="ngModel"  name="username" placeholder="enter your username" required ngModel><br>
+    <span  style="color: red;"  *ngIf="usernamecontrol.touched && usernamecontrol.invalid">Username is Mandatory</span><br>
+
+    <label for="password">PASSWORD</label>
+    <input type="password" id="password" #passwordcontrol="ngModel" name="password" placeholder="enter password"required minlength="10" ngModel><br>
+    <span  style="color: red;"  *ngIf="passwordcontrol.touched && passwordcontrol.invalid">Password is Mandatory and should be of 10 characters</span><br>
+
+    <button type="submit"   [disabled]="myform.invalid" >Submit</button>
+  </form>
+</div>
+<br><br>
+</body>
+

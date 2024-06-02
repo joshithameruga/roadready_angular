@@ -1,0 +1,53 @@
+body{
+  position: fixed; 
+  margin: 0;
+  padding: 0;
+  background-image: url(src\assets\background.jpg);
+  background-size: cover;
+  background-position: center;}
+
+/* Style the card container */
+.card-container {
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding:50px;
+  height:700px;
+  }
+  
+  /* Style the row */
+ 
+  
+  /* Style the card */
+  .card {
+    margin-top: 50px;
+    margin-bottom :30px;
+    margin-right: 30px;
+    margin-left:60px;
+    background-image: linear-gradient(to right,  #08b3e5, #2fd7a89d);
+    transition: 0.3s;
+    width: 300px;
+    height:150px;
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 20px;
+  }
+  
+  /* On mouse-over, increase the card's shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  /*.logout {
+    float: right;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+
+  .button{
+   float: inline-end;
+    cursor: pointer;
+
+  }*/

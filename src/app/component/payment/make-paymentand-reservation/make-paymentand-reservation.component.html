@@ -1,0 +1,51 @@
+<body>
+  <br>
+  <div class="back" routerLink="/customerdashboard">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/>
+      <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
+    </svg>
+  </div>
+<br>
+<div class="container">
+   <!-- <form  #myform="ngForm"  method="post" (ngSubmit)="insertCustomer(myform.value)">  -->
+    
+     <form  #myform="ngForm" (ngSubmit)="makePaymentAndReservation(myform.value)" >
+      <label for="id">CUSTOMER ID</label>
+      <input type="text" id="id" #formcontrol="ngModel" name="customerId"  [(ngModel)]="customerId" placeholder="{{customerId}}"  required ngModel readonly><br>
+      <span  style="color: red;"  *ngIf="formcontrol.touched && formcontrol.invalid">CustomerId is Mandatory</span><br>
+  
+      <label for="carid">CAR ID</label>
+      <input type="text" id="carid" #formcontrol="ngModel" name="carId" [(ngModel)]="carId" placeholder="{{carId}}" required ngModel readonly><br>
+      <span  style="color: red;"  *ngIf="formcontrol.touched && formcontrol.invalid">Car id is Mandatory</span><br>
+     
+      <label for="pickup">DATE OF PICKUP</label>
+      <input type="date" id="pickup" name="dateOfPickup" placeholder="yyyy-mm-dd" required
+             [(ngModel)]="dateOfPickup" #pickupInput="ngModel" [min]="minDate" ><br>
+      <span style="color: red;" *ngIf="pickupInput.touched && pickupInput.invalid">Pickup Date is Mandatory</span><br>
+      
+      <label for="dropoff">DATE OF DROPOFF</label>
+      <input type="date" id="dropoff" name="dateOfDropOff" placeholder="yyyy-mm-dd" required
+             [(ngModel)]="dateOfDropOff" #dropoffInput="ngModel" [min]="minDate"  (input)="onDateChange()"><br>
+      <span style="color: red;" *ngIf="dropoffInput.touched && dropoffInput.invalid">Dropoff date is Mandatory</span><br>
+      
+      <label for="amount">AMOUT TO BE PAID</label>
+      <input type="text" id="amount" #formcontrol="ngModel" [(ngModel)]="amount" name="amountPaid" placeholder="{{amount}}" required ngModel><br>
+      <span  style="color: red;"  *ngIf="formcontrol.touched && formcontrol.invalid">Amount is Mandatory</span><br>
+  
+      <label for="mode">CHOOSE MODE OF PAYMENT</label>
+      <!-- <select name="modeofpayemnt" id="mode" #formcontrol="ngModel" [(ngModel)]="selectedPaymentMode" required > -->
+        <select name="modeOfPayment" id="mode" #formcontrol="ngModel"  required ngModel>
+        
+        <option value="upi">UPI</option>
+        <option value="creditcard">CREDIT CARD</option>
+        <option value="debitcard">DEBIT CARD</option>
+        
+      </select><br>  
+      
+      <span  style="color: red;"  *ngIf="formcontrol.touched && formcontrol.invalid">Enter mode of payment</span><br>
+  
+      <button type="submit"   [disabled]="myform.invalid" >PAY</button>
+    </form>
+  </div>
+</body>

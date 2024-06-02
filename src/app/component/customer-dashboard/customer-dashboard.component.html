@@ -1,0 +1,172 @@
+<div class="customer-dashboard">
+<div class="filter">
+    <h4>Get Car By</h4>     <a (click)="clearSelection()">clearAll</a>
+    <br>
+    <h5>Location</h5>
+<div class="form-check">
+    <input class="form-check-input"  type="radio" name="location" id="hyderabad"  (change)="applyLocationFilter('Hyderabad')" >
+    <label class="form-check-label" for="hyderabad">Hyderabad</label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="location" id="chennai" value="Chennai" (change)="applyLocationFilter('Chennai')">
+    <label class="form-check-label" for="chennai">Chennai</label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="location" id="noida" value="Noida" (change)="applyLocationFilter('Noida')">
+    <label class="form-check-label" for="noida">Noida</label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="location" id="banglore" value="Banglore" (change)="applyLocationFilter('Banglore')">
+    <label class="form-check-label" for="banglore">Banglore</label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="location" id="delhi" value="Delhi" (change)="applyLocationFilter('Delhi')">
+    <label class="form-check-label" for="delhi">Delhi</label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="location" id="pune" value="Pune" (change)="applyLocationFilter('Pune')">
+    <label class="form-check-label" for="pune">Pune</label>
+</div>
+
+
+    <br>
+<h5>Make</h5>
+<div class="form-check">
+    <input class="form-check-input" type="radio" id="radio1" name="make" value="MarutiSuzuki" (change)="applyMakeFilter('MarutiSuzuki')">
+    <label class="form-check-label" for="radio1">Maruti Suzuki</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" id="radio2" name="make" value="Hyundai" (change)="applyMakeFilter('Hyundai')">
+    <label class="form-check-label" for="radio2">Hyundai</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" id="radio3" name="make" value="TataMotors" (change)="applyMakeFilter('TataMotors')">
+    <label class="form-check-label" for="radio3">Tata Motors</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" id="radio4" name="make" value="Mahindra" (change)="applyMakeFilter('Mahindra')">
+    <label class="form-check-label" for="radio4">Mahindra</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" id="radio5" name="make" value="Honda" (change)="applyMakeFilter('Honda')">
+    <label class="form-check-label" for="radio5">Honda</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" id="radio6" name="make" value="Toyota" (change)="applyMakeFilter('Toyota')">
+    <label class="form-check-label" for="radio6">Toyota</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" id="radio7" name="make" value="Volkswagen" (change)="applyMakeFilter('Volkswagen')">
+    <label class="form-check-label" for="radio7">Volkswagen</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" id="radio8" name="make" value="Ford" (change)="applyMakeFilter('Ford')">
+    <label class="form-check-label" for="radio8">Ford</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" id="radio9" name="make" value="Kia" (change)="applyMakeFilter('Kia')">
+    <label class="form-check-label" for="radio9">Kia</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" id="radio10" name="make" value="Renault" (change)="applyMakeFilter('Renault')">
+    <label class="form-check-label" for="radio10">Renault</label>
+</div>
+
+<h5>Specifications</h5>
+<div class="form-check">
+    <input class="form-check-input" type="radio" id="radioManualDiesel" name="specification" value="ManualDiesel" (change)="applySpecificationFilter('ManualDiesel')">
+    <label class="form-check-label" for="radioManualDiesel">Manual , Diesel</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" id="radioAutomaticDiesel" name="specification" value="AutomaticDiesel" (change)="applySpecificationFilter('AutomaticDiesel')">
+    <label class="form-check-label" for="radioAutomaticDiesel">Automatic , Diesel</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" id="radioManualPetrol" name="specification" value="ManualPetrol" (change)="applySpecificationFilter('ManualPetrol')">
+    <label class="form-check-label" for="radioManualPetrol">Manual , Petrol</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" id="radioAutomaticPetrol" name="specification" value="AutomaticPetrol" (change)="applySpecificationFilter('AutomaticPetrol')">
+    <label class="form-check-label" for="radioAutomaticPetrol">Automatic , Petrol</label>
+</div>
+
+<br>
+
+<h5>Passenger capacity</h5>
+<div class="form-check">
+    <input class="form-check-input" type="radio" id="radio4Passenger" name="passenger" value="4" (change)="applyPassengerFilter(4)">
+    <label class="form-check-label" for="radio4Passenger">4 seats</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" id="radio5Passenger" name="passenger" value="5" (change)="applyPassengerFilter(5)">
+    <label class="form-check-label" for="radio5Passenger">5 seats</label>
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" id="radio7Passenger" name="passenger" value="7" (change)="applyPassengerFilter(7)">
+    <label class="form-check-label" for="radio7Passenger">7 seats</label>
+</div>
+</div>
+
+
+<!-- available cars-->
+
+<div class="car-container-main">
+    <div class="car-container">
+      <div class="car-box"  *ngFor="let car of (isRadioButtonClicked ? carFilterList : carSearchList)"> 
+            
+            <img [src]="getCarImage(car)" [alt]="'Car ' + car.make + ' ' + car.model">
+            <p>{{car.make}}</p>
+            <h2>{{car.model}}</h2>
+            <p>{{car.passengerCapacity}} seats</p>
+            <p >Daily Rate:{{car.dailyRate}}</p>
+           <!--   <button routerLink="/makepayment">Book</button> -->
+           <button [routerLink]="['/makepayment']" [queryParams]="{ dailyRate: car.dailyRate, carId: car.carId }">Book</button>
+
+            
+
+    
+        </div>
+        
+    </div>
+</div>
+
+
+<div class="tab" [ngClass]="{ 'open': isTabOpen }">
+    <button class="tablinks" (click)="toggleTab()">☰ MENU</button>
+    <div class="tab-content">
+      <button class="tablinks" routerLink="/updatecustomerdetails">Update Account</button>
+      <button class="tablinks" routerLink="/viewpaymenthistory">View Your Payments</button>
+      <button class="tablinks" routerLink="/viewreservationhistory" >View your Reservations</button>
+      <button class="tablinks" routerLink="/uploadcustomeridentity" >upload Your Licence</button>
+      <button class="tablinks" routerLink="/deletecustomeridentity">Delete Your Licence</button>
+      <button class="tablinks"  routerLink="/customerfeedback" >Give Feedback</button>
+      <!-- <button class="tablinks"   routerLink="/modifyreservation" >Modify Reservation</button>
+      <button class="tablinks"   routerLink="/cancelreservation">Cancel Reservation</button> -->
+      <button class="tablinks" (click)= "logout()">LogOut</button>
+
+    </div>
+  </div>
+
+ 
+
+
+
+
+<router-outlet></router-outlet>
+
+</div>
+

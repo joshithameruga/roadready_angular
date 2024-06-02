@@ -1,0 +1,28 @@
+<body>
+  <div class="back" routerLink="/searchallagents">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/>
+      <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
+    </svg>
+  </div>
+  <br>
+<div class="container">
+    <form  #myform="ngForm"  method="put" (ngSubmit)="updateAgent(myform.value)">
+  
+      <label for="agentId">AGENT ID</label>
+      <input type="text" id="agentId" #agentIdcontrol="ngModel" name="agentId" placeholder="Enter agent id"  required ngModel><br>
+      <span  style="color: red;"  *ngIf="agentIdcontrol.touched && agentIdcontrol.invalid">Agent ID is Mandatory</span><br>
+  
+      <label for="aname">USERNAME</label>
+      <input type="text" id="aname" #anamecontrol="ngModel" name="username" placeholder="Enter username" required ngModel><br>
+      <span  style="color: red;"  *ngIf="anamecontrol.touched && anamecontrol.invalid">Username is Mandatory</span><br>
+     
+      <label for="apass">PASSWORD</label>
+      <input type="password" id="apass" #apasscontrol="ngModel" name="password" placeholder="Enter password" required minlength="10" ngModel><br>
+      <span  style="color: red;"  *ngIf="apasscontrol.touched && apasscontrol.invalid">Password is Mandatory and should be of 10 characters</span><br>
+  
+      
+      <button type="submit"   [disabled]="myform.invalid" >Submit</button>
+    </form>
+  </div><br>
+  </body>

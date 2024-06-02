@@ -1,0 +1,18 @@
+.add {
+  margin-top: 50px;
+  float :left;
+}
+
+.search {
+  margin-top:50px;
+ float :right;
+}
+
+
+.highlight {
+  background-color: yellow; /* Customize as needed */
+}
+
+.dull {
+  opacity: 0.5; /* Customize as needed */
+}

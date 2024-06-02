@@ -1,0 +1,20 @@
+<br>
+<br>
+
+<div class="container">
+  <!-- <form  #myform="ngForm"  method="post" (ngSubmit)="insertCustomer(myform.value)"> -->
+    <form  #myform="ngForm" >
+    <label for="username"> USERNAME</label>
+    <input type="text" id="username" #usernamecontrol="ngModel"  name="username" placeholder="enter your username" required ngModel><br>
+    <span  style="color: red;"  *ngIf="usernamecontrol.touched && usernamecontrol.invalid">Username is Mandatory</span><br>
+
+    <label for="password">PASSWORD</label>
+    <input type="password" id="password" #passwordcontrol="ngModel" name="password" placeholder="enter password"required minlength="10" ngModel><br>
+    <span  style="color: red;"  *ngIf="passwordcontrol.touched && passwordcontrol.invalid">Password is Mandatory and should be of 10 characters</span><br>
+
+    <button type="submit"   [disabled]="myform.invalid" >Submit</button>
+  </form>
+</div>
+
+
+

@@ -1,0 +1,69 @@
+<body>
+  
+
+<br>
+<div class="back" routerLink="/customerdashboard">
+  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/>
+    <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
+  </svg>
+</div>
+<br>
+
+
+
+
+
+<form class="container" #uploadForm="ngForm">
+ 
+    <label for="customerId">Customer ID:</label>
+    <input type="text" id="customerId" name="customerId" placeholder="{{customerId}}"  [(ngModel)]="customerId" required readonly>
+    
+  <br>
+ 
+    <label for="pdfFile">Upload PDF File:</label>
+    <input type="file" id="pdfFile" name="pdfFile" (change)="onFileSelected($event)"  required>
+ 
+  
+  <button type="submit" (click)="upload()"   [disabled]="!selectedFile"> Upload </button>
+</form>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container"> -->
+ <!-- <form  #myform="ngForm"  method="post" (ngSubmit)="insertCustomer(myform.value)">  -->
+    <!-- <form  #myform="ngForm" (ngSubmit)="uploadCustomerIdentity(myform.value,myInput.files)" enctype="multipart/form-data">
+
+    <label for="id">CUSTOMER ID</label>
+    <input type="text" id="id" #formcontrol="ngModel" name="customerId" placeholder="enter customer id"  required ngModel><br>
+    <span  style="color: red;"  *ngIf="formcontrol.touched && formcontrol.invalid">Customer Id is Mandatory</span><br>
+
+    <label for="id">YOUR LICENCE</label>
+    <input type="file" id="id"   #myInput #formcontrol="ngModel" name="file" placeholder="upload driver's licence" required ngModel><br>
+    <span  style="color: red;"  *ngIf="formcontrol.touched && formcontrol.invalid">Licence is Mandatory</span><br>
+   
+
+    <button type="submit"   [disabled]="myform.invalid" >UPLOAD IDENTITY</button>
+  </form>
+</div> -->
+
+
+
+
+

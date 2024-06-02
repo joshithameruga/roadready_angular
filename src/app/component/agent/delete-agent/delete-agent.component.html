@@ -1,0 +1,13 @@
+<p>delete-agent works!</p>
+<div>
+    <form  #myform="ngForm"  (ngSubmit)="deleteAgentById(myform.value)">
+  
+      <label for="id">AGENT ID</label>
+      <input type="text" id="id" #idcontrol="ngModel" name="agentId" placeholder="enter agent ID"  required ngModel>
+      <span  style="color: red;"  *ngIf="idcontrol.touched && idcontrol.invalid">Agent Id is Mandatory</span><br>
+      
+      <button type="submit"   [disabled]="myform.invalid" >Delete</button>
+
+    
+</form>  
+</div>

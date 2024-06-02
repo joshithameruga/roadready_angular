@@ -1,0 +1,78 @@
+.dashboard{
+
+    overflow: hidden;
+    background-image: linear-gradient(to right,  #08b3e5, #2fd7a89d);
+    
+    
+}
+.dashboard a{
+    color: black;
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+}
+
+.dashboard a.active{
+ 
+    background-color: rgba(35, 123, 154, 0.595);
+    color: white;
+}
+
+.dashboard a:hover{
+
+   
+    background-color: rgba(35, 123, 154, 0.595);
+    color: black;
+}
+.dashboard a.login{
+  float: right;
+}
+.dashboard a.register{
+    float: right;
+}  
+
+
+
+
+
+
+
+
+
+
+/*.dashboard{
+
+    overflow: hidden;
+    background-color:black ;
+    
+}
+.dashboard a{
+    color: aliceblue;
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+}
+
+.dashboard a.active{
+ 
+   background-image: linear-gradient(to right, #b30086 , #ff0066);
+    color: white;
+}
+
+.dashboard a:hover{
+
+    background-color: whitesmoke;
+    color: black;
+}
+.dashboard a.login{
+  float: right;
+}
+.dashboard a.register{
+    float: right;
+}  */

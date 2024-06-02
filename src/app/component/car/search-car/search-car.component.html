@@ -1,0 +1,81 @@
+<br>
+<div class="back" routerLink="/admindashboard">
+  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/>
+    <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
+  </svg>
+</div>
+
+<br>
+
+
+<div class="add">
+  <button type="button" class="btn btn-success"   routerLink="/addcar">ADD CAR</button>
+  </div>
+  
+  
+  <div class="search">
+  <nav class="navbar navbar-light ">
+      <div class="container-fluid">
+        <form class="d-flex" >
+          
+          <input class="form-control me-2" type="number" [(ngModel)]="searchId" name="data"  ngModel  placeholder="Search By Id" aria-label="Search">
+  
+          <!-- <input class="form-control me-2" type="search" name="data"  ngModel  placeholder="Search By Id" aria-label="Search">  -->
+  
+        <!-- <button class="btn btn-outline-success" type="submit">Search</button>   --> 
+        </form>
+      </div>
+    </nav>
+  </div>
+  
+  
+  <!--  car discounts  -->
+  
+  <div class="discountcontainer">
+    <select class="form-select" [(ngModel)]="selectedCarMake">
+      <option value="" selected disabled>Select Car Make</option>
+      <option *ngFor="let make of carMakes" [value]="make">{{ make }}</option>
+    </select>
+  
+    <select class="form-select" [(ngModel)]="selectedDiscount">
+      <option value="" selected disabled>Select Discount Percentage</option>
+      <option *ngFor="let discount of discounts" [value]="discount">{{ discount }}%</option>
+    </select>
+    <button type="submit" class="btn btn-success" (click)="discountOnCarMake()">Apply Discount</button>
+  </div>
+  
+  <div class="container  col-md-11">
+  <table  class="table table-info">
+  
+  <thead>
+  <tr><th>CAR ID</th><th>MAKE</th><th>MODEL</th><th> LOCATION</th>
+      <th>DAILY RATE</th><th>CAR STATUS</th><th>SPECIFICATION</th><th> PASSENGER CAPACITY</th>
+      <th> UPDATE</th><th> DELETE</th></tr>
+  </thead>
+  
+  <!--<tr *ngFor="let cars of  carSearchList | searchCarById: searchId : 'carId'"> -->
+   <tr *ngFor="let cars of  carPageList | searchCarById: searchId : 'carId'"> 
+   <td>{{cars.carId}}</td><td>{{cars.make}}</td>
+   <td>{{cars.model}}</td>  <td>{{cars.location}}</td><td>{{cars.dailyRate}}</td>
+   <td>{{cars.carStatus}}</td> <td>{{cars.specifications}}</td>
+   <td>{{cars.passengerCapacity}}</td> 
+   <td><button type="button" class="btn btn-success"   routerLink="/updatecar">UPDATE</button></td> 
+  
+   <td><button type="button" class="btn btn-danger"   (click)="deleteCarById(cars.carId)">Delete</button></td> 
+  </tr>
+  
+  </table>
+  <mat-paginator [length]="carSearchList.length" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 25, 100]" (page)="onPageChange($event)"></mat-paginator>
+  </div>
+  
+  
+  
+  
+    
+  
+  
+  
+  
+  
+  <router-outlet> </router-outlet>

@@ -1,0 +1,45 @@
+
+<br>
+<br>
+<img src="../assets/driving car.jpg" alt="animated image"> <br>
+
+<div class="container">
+
+  
+  
+    <!-- <form  #myform="ngForm"  method="post" (ngSubmit)="insertCustomer(myform.value)"> -->
+    <form  #myform="ngForm"  (ngSubmit)="readFormData(myform)">
+      <label for="username">USERNAME</label>
+      <input type="text" id="username" #usernamecontrol="ngModel" name="username" placeholder="enter your user name"  required ngModel><br>
+      <span  style="color: red;"  *ngIf="usernamecontrol.touched && usernamecontrol.invalid">User Name is Mandatory</span><br>
+
+     
+      
+    <label for="password">PASSWORD</label>
+    <input type="password" id="password" #passwordcontrol="ngModel" name="password" placeholder="enter your password"  required ngModel><br>
+    <span  style="color: red;"  *ngIf="passwordcontrol.touched && passwordcontrol.invalid">Password is Mandatory</span><br>
+    
+    <button type="submit"   [disabled]="myform.invalid" >Login</button>
+
+    <p  (click)="backtoRegistration()">New User?Please Signup Here</p>
+    <p  (click)="passwordUpdation()">Forgot password ? Please Click Here</p>
+
+    </form>
+ 
+</div>
+
+<h1>{{response}}</h1>
+
+<!-- <div id="g_id_onload"
+     data-client_id="910352702529-3fru6jqbkqqun89s88vjudstukbgmn18.apps.googleusercontent.com"
+     data-context="signin"
+     data-login_uri="http://localhost:8080/roadready/user/signIn/google"
+     data-itp_support="true">
+</div>  -->
+
+
+
+
+
+<router-outlet></router-outlet>
+

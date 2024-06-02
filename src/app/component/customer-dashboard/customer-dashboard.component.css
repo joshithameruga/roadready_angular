@@ -1,0 +1,152 @@
+.customer-dashboard{
+ overflow: auto;
+}
+
+.filter {
+    position: fixed; /* Fixed positioning to keep it in place */
+    margin-top:50px;
+    top: 0; /* Position it at the top */
+    left: 0; /* Position it on the left */
+    width: 200px; /* Set the width of the sidebar */
+    height: 100%; /* Set the height to take full height of the viewport */
+    background-color: white; /* Light grey background color */
+    padding: 20px; /* Add padding for spacing */
+    border-right: 1px solid white; /* Add a border to separate from content */
+    overflow: auto; /* Add scrollbar if content overflows */
+}
+
+.filter a{
+
+    color:rgb(71, 188, 221);
+    cursor: pointer;
+}
+
+/* Optional: Adjust styles for better appearance */
+.filter h2 {
+    
+    margin-top: 20px;
+}
+
+.filter .form-check-label {
+    margin-bottom: 10px;
+}
+
+/* available cars*/
+
+.car-container-main {
+    width: calc(100% - 80px);
+    max-width: 1200px; /* Optional: Set a maximum width */
+    margin: auto; /* Center horizontally */
+    padding:50px;
+    box-sizing: border-box; /* Include padding in width calculation */
+    
+}
+
+.car-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+    padding: 70px;
+    background-color: whitesmoke;
+}
+
+.car-box {
+    background-color: #ffffff;
+    text-align: left;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.car-box img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.car-box h2 {
+    margin-bottom: 10px;
+}
+
+.car-box p {
+    margin-bottom: 10px;
+}
+
+.car-box button {
+   
+    background-color: rgba(35, 123, 154, 0.595);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    float: inline-end;
+
+}
+
+.car-box button:hover {
+    background-image: linear-gradient(to right,  #08b3e5, #2fd7a89d);
+}
+
+
+/*menu bar*/
+/* side menu bar*/
+* {box-sizing: border-box}
+
+
+
+/* Style the tab */
+.tab {
+    float:right;
+    position: fixed; /* Fixed positioning to keep it in place */
+    /*margin-top:60px;*/
+    margin-left: 70px;
+    top: 0; /* Position it at the top */
+    right: 0; /* Position it on the left */
+    width: 200px; /* Set the width of the sidebar */
+    height: 100%; /* Set the height to take full height of the viewport */
+    background-color: white; /* Light grey background color */
+    padding: 20px; /* Add padding for spacing */
+    border-right: 1px solid white; /* Add a border to separate from content */
+    overflow-y: auto; /* Add scrollbar if content overflows */
+    z-index: 1000;
+}
+
+.tab .tablinks {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+.tab .tablinks:hover {
+    background-image: linear-gradient(to right,  #08b3e5, #2fd7a89d);
+  }
+  
+  .tab .tab-content {
+    display: none; /* Hide the content initially */
+    position: absolute;
+    background-color: white;
+    width: 200px;
+    border-right: 1px solid white;
+    overflow-y: auto;
+  }
+  
+  .tab.open .tab-content {
+    display: block; /* Show the content when the tab is open */
+  }
+
+  .logout {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }

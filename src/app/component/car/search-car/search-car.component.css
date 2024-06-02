@@ -1,0 +1,42 @@
+.add {
+    margin-top: 50px;
+    float :left;
+  }
+  
+  .search {
+    margin-top:50px;
+   float :right;
+  }
+  
+  .discountcontainer{
+ 
+    width: 90%;
+    margin: auto;
+    padding: 40px;
+    border-radius: 10px;
+    margin-left: 0;
+    box-sizing: border-box;
+    text-align: center; /* Align content in the center */
+
+  }
+
+  select {
+    width: 20%; /* Adjust input field width as needed */
+    padding: 10px 20px;
+    margin: 6px 0;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+
+  button[type="submit"]{
+    width: 10%; /* Adjust button width as needed */
+    background-image: linear-gradient(to right,  #08b3e5, #2fd7a89d);
+    color: white;
+    padding: 12px 10px;
+    margin: 20px 0; /* Add margin to the button */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  

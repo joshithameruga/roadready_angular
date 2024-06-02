@@ -1,0 +1,33 @@
+<body>
+<br>
+<div class="back" routerLink="/customerdashboard">
+  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/>
+    <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
+  </svg>
+</div>
+  <br>
+<div class="container">
+    <form  #myform="ngForm"  method="post" (ngSubmit)="insertCustomerFeedback(myform.value)">
+  
+    
+      <label for="cid">CUSTOMER ID</label>
+      <input type="text" id="cid" #cidcontrol="ngModel" name="customerId"  [(ngModel)]="customerId"  placeholder="{{customerId}}" required ngModel readonly><br>
+      <span  style="color: red;"  *ngIf="cidcontrol.touched && cidcontrol.invalid">customer id is Mandatory</span><br>
+     
+      <label for="cname">CUSTOMER NAME</label>
+      <input type="text" id="cname" #cnamecontrol="ngModel" name="customerName" placeholder="enter your name" required ngModel><br>
+      <span  style="color: red;"  *ngIf="cnamecontrol.touched && cnamecontrol.invalid">Name is Mandatory</span><br>
+  
+      <label for="review">CUSTOMER REVIEW</label>
+      <input type="text" id="review" #reviewcontrol="ngModel" name="customerReview" placeholder="enter your review" required ngModel><br>
+      <span  style="color: red;"  *ngIf="reviewcontrol.touched && reviewcontrol.invalid">Review is Mandatory</span><br>
+  
+      <label for="rate"> RATING </label>
+      <input type="text" id="rate" #ratecontrol="ngModel"  name="rating" placeholder="enter rating" required ngModel><br>
+      <span  style="color: red;"  *ngIf="ratecontrol.touched && ratecontrol.invalid">Rating is Mandatory out of 5</span><br>
+  
+      <button type="submit"   [disabled]="myform.invalid" >Submit</button>
+    </form>
+  </div><br>
+  </body>

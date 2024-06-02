@@ -1,0 +1,52 @@
+<br>
+<div class="back" routerLink="/admindashboard">
+  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/>
+    <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
+  </svg>
+</div>
+
+<br>
+
+
+<div class="add">
+  <button type="button" class="btn btn-success"  routerLink="/addcustomer">ADD CUSTOMER</button>
+  </div>
+  
+  <div class="search">
+  <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <form class="d-flex" >
+          <input class="form-control me-2" type="number" [(ngModel)]="searchId" name="data" placeholder="Search By Id" aria-label="Search">
+  
+          <!-- <input class="form-control me-2" type="search" name="data"  ngModel  placeholder="Search By Id" aria-label="Search"> -->
+          <!-- <button class="btn btn-outline-success" type="submit"  (click)="findCustomer(filter.value)">Search</button> -->
+        </form>
+      </div>
+    </nav>
+  </div>
+  
+  
+  
+  
+  
+  <div class="container  col-md-9">
+    <table  class="table table-info" >
+    
+    <thead>
+    <tr><th>ID</th><th>FIRST NAME</th><th>LAST NAME</th><th>USERNAME</th><th>EMAIL ADDRESS</th><th>PHONE NUMBER</th><th> UPDATE</th><th> DELETE</th></tr>
+    </thead>
+    
+    <tr *ngFor="let customer of customerPageList  | searchById: searchId : 'customerId'"  >
+     <td>{{customer.customerId}}</td><td>{{customer.firstName}}</td>
+     <td>{{customer.lastName}}</td> <td>{{customer.username}}</td>
+     <td>{{customer.emailAddress}}</td><td>{{customer.phoneNumber}}</td>
+     <td><button type="button" class="btn btn-success" [routerLink]="['/updatecustomerbyadmin']" [queryParams]="{ customerId: customer.customerId }">UPDATE</button></td> 
+     <td><button type="button" class="btn btn-danger"   (click)="deleteCustomerById(customer.customerId)">Delete</button></td> 
+    </tr>
+    
+    </table>
+    <mat-paginator [length]="customerSearchList.length" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 25, 100]" (page)="onPageChange($event)"></mat-paginator>
+    </div>
+  
+  <router-outlet> </router-outlet>

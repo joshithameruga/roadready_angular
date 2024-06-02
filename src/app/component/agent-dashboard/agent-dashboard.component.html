@@ -1,0 +1,78 @@
+<body>
+
+  <div class="container">
+    <div class="row justify-content-end">
+      <div class="col-auto">
+        <button class="btn btn-warning mr-2" (click)="sendNotification()">Send Notification</button>
+      </div>
+      <div class="col-auto">
+       
+        <button class="btn btn-warning mr-2" (click)="logout()">LogOut</button>
+      </div>
+    </div>
+  </div>
+
+
+<div class="card-container" >
+    
+    <div class="row">
+      <div class="card" routerLink="/updatecaravailability">
+      
+        <div class="container">
+          <h4 style="text-align: center;">UPDATE CAR AVAILABILITY</h4>
+        </div>
+      </div>
+      
+      <div class="card" routerLink="/verifyidentity">
+    
+        <div class="container">
+            <h4 style="text-align: center;">VERIFY CUSTOMER IDENTITY</h4>
+        </div>
+      </div>
+      
+      <div class="card" routerLink="/carmaintenancereport">
+       
+        <div class="container">
+          <h4 style="text-align: center;">GENERATE CAR MAINTENANCE REPORT</h4>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="card" routerLink="/checkin">
+      
+        <div class="container" >
+          <h4 style="text-align: center;">CHECK IN</h4>
+        </div>
+      </div>
+      
+      <div class="card" routerLink="/checkout">
+   
+        <div class="container">
+          <h4 style="text-align: center;">CHECK OUT</h4>
+        </div>
+      </div>
+
+
+      <!--<div class="card">
+      
+        <div class="container">
+          <h4>SEND ALERT</h4>
+          <button class="btn btn-warning" (click)="sendNotification()">Send Notification</button>
+        </div>
+      </div>-->
+
+     
+
+ 
+    
+
+    </div>
+  </div>
+
+
+  
+
+  
+
+</body>
